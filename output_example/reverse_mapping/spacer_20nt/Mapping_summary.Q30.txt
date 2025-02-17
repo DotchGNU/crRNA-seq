@@ -1,0 +1,2 @@
+File name	Total read	PM read	%	1MM read	%	2MM read	%
+SF-High-NoCaCl2-24h-inf-1	467377	364294	77.94	8784	1.88	124	0.03

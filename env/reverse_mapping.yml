@@ -1,0 +1,37 @@
+name: reverse_mapping
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - bowtie=1.2.3=py27h770b8ee_0
+  - ca-certificates=2022.9.24=h033912b_0
+  - certifi=2019.11.28=py27h8c360ce_1
+  - libblas=3.9.0=16_osx64_openblas
+  - libcblas=3.9.0=16_osx64_openblas
+  - libcxx=14.0.6=hccf4f1f_0
+  - libgfortran=5.0.0=10_4_0_h97931a8_25
+  - libgfortran5=11.3.0=h082f757_25
+  - liblapack=3.9.0=16_osx64_openblas
+  - libopenblas=0.3.21=openmp_h429af6e_3
+  - libzlib=1.2.11=h6c3fc93_1014
+  - llvm-openmp=14.0.4=ha654fa7_0
+  - ncurses=6.3=h96cf925_1
+  - numpy=1.15.4=py27hbb3c62a_1002
+  - openssl=1.0.2u=h0b31af3_0
+  - pandas=0.24.2=py27h86efe34_0
+  - perl=5.32.1=2_h0d85af4_perl5
+  - pip=20.1.1=pyh9f0ad1d_0
+  - python=2.7.14=5
+  - python-dateutil=2.8.1=py_0
+  - python_abi=2.7=1_cp27m
+  - pytz=2019.3=py_0
+  - readline=7.0=hcfe32e1_1001
+  - setuptools=44.0.0=py27_0
+  - six=1.16.0=pyh6c4a22f_0
+  - sqlite=3.20.1=0
+  - tbb=2020.2=h940c156_4
+  - tk=8.6.12=h5dbffcc_0
+  - wheel=0.37.1=pyhd8ed1ab_0
+  - zlib=1.2.11=h6c3fc93_1014
+prefix: /Users/ago/anaconda3/envs/reverse_mapping
