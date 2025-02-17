@@ -1,2 +1,0 @@
-File name	Total read	PM read	%	1MM read	%	2MM read	%
-SF370	29853	1573	5.27	14	0.05	1	0.0
