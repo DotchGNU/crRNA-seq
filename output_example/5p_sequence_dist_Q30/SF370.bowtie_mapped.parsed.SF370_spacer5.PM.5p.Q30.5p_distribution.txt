@@ -1,0 +1,15 @@
+no_5p_tail	3284
+C	104
+TT	13
+A	10
+T	6
+NATC	2
+N	2
+AA	2
+TN	1
+NT	1
+GATC	1
+AT	1
+ACTGGGGN	1
+AAT	1
+AAAT	1
