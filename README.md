@@ -97,8 +97,10 @@ crRNA_pipeline/
 - **Dependency Problems:**\
   Confirm that all required Python packages are installed within the respective conda environments. Adjust the YAML files if necessary.
 
-## Contact
+## License & Contact
 
+- **License:**\
+This software is licensed under the MIT License. See the LICENSE file for details.
 
 - **Contact:**\
   For questions or bug reports, please refer to [gwpia0409@korea.ac.kr].
