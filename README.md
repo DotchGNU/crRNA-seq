@@ -60,6 +60,15 @@ crRNA_pipeline/
 
    The pipeline expects FASTQ files to be located in the `./fastq` directory. Place your FASTQ files in `./fastq` or update the FASTQ directory path in `main.sh` accordingly.
 
+   **Example Input File:**
+   If you need a sample FASTQ file for testing, you can download one using `wget`:
+   ```bash
+   mkdir -p fastq
+   cd fastq
+   wget http://ago.korea.ac.kr/crispr_abasic/crRNA_sequencing_SF370/SF370_1a.R1.fastq.gz
+   cd ..
+   ```
+
 ## Usage
 
 **Run the Entire Pipeline**
