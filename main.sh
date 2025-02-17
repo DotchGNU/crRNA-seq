@@ -3,7 +3,14 @@
 # This version uses a relative directory structure and stores all output in result/
 
 # Activate conda (adjust if necessary)
-source ~/anaconda3/etc/profile.d/conda.sh
+if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+    source "$HOME/anaconda3/etc/profile.d/conda.sh"
+elif [ -f "$HOME/miniconda3/etc/profile.d/conda.sh" ]; then
+    source "$HOME/miniconda3/etc/profile.d/conda.sh"
+else
+    echo "Error: conda.sh not found. Please check your Anaconda/Miniconda installation."
+    exit 1
+fi
 
 # Set the fastq directory (now using the local "./fastq" directory)
 FASTQ_DIR="./fastq"
