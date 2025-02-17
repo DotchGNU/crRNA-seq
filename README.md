@@ -40,8 +40,8 @@ crRNA_pipeline/
 1. **Clone the Repository and Navigate to the Project Directory**
 
    ```bash
-   git clone <repository-url>
-   cd crRNA_pipeline
+   git clone https://github.com/DotchGNU/crRNA-seq.git
+   cd crRNA-seq
    ```
 
 2. **Create Conda Environments**
