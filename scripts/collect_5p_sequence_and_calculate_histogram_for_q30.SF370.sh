@@ -26,7 +26,7 @@ done
 # Q-score masking: retain reads with Q-score <= 30
 for fq in ${output_dir}/*.PM.5p.fastq; do
     echo "Applying Q<=30 masking on: $fq"
-    python ../scripts/fastq/qscore_masking.py -q 30 -i "$fq" -o "${fq/.fastq/.Q30.fastq}"
+    conda run -n crRNA-seq python ../scripts/fastq/qscore_masking.py -q 30 -i "$fq" -o "${fq/.fastq/.Q30.fastq}"
 done
 
 # Calculate distribution of 5' sequences (for reads with Q > 30)
@@ -38,6 +38,6 @@ done
 # Merge all distributions for each spacer
 for spacer in SF370_spacer1 SF370_spacer2 SF370_spacer3 SF370_spacer4 SF370_spacer5 SF370_spacer6; do
     echo "Merging 5' distribution for spacer: $spacer"
-    python ../scripts/merge_and_lookup_table.manual.py -i ${output_dir}/*${spacer}*.5p_distribution.txt -o ${output_dir}/${spacer}.Q30.5p_distribution.merged.txt
+    conda run -n crRNA-seq python ../scripts/merge_and_lookup_table.manual.py -i ${output_dir}/*${spacer}*.5p_distribution.txt -o ${output_dir}/${spacer}.Q30.5p_distribution.merged.txt
 done
 

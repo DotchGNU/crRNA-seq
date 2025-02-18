@@ -8,31 +8,41 @@ This pipeline processes crRNA-Seq using Bowtie, regular expressions, and several
 
 ```
 crRNA_pipeline/
-├── README.md                         # This file
-├── main.sh                           # Main pipeline bash script
-├── env/
-│   ├── GWK.yml                       # Conda environment YAML file for GWK
-│   ├── reverse_mapping.yml           # Conda environment YAML file for reverse_mapping
-├── scripts/
-│   ├── fastq/
-│   │   ├── filter_by_sequence_fastq.py
-│   │   └── filter_fastq_by_read_length.py
-│   ├── Mapping_miRNA/
-│   │   ├── Mapping_miRNA_with_bowtie.py
-│   │   ├── count_miRNA.py
-│   │   └── extract_bowtie_unmapped_reads.biopython.py
-│   ├── grep_count_by_length_using_regex.py
-│   ├── merge_and_lookup_table.spacer_regex.py
-│   ├── merge_and_lookup_table.manual.py    # Used for merging 5' sequence distributions
-│   ├── collect_5p_sequence_and_calculate_histogram_for_q30.SF370.sh
-└── result/                             # Directory for storing all output files
+├── LICENSE
+├── README.md					# This file
+├── main.sh                                     # Main pipeline bash script 
+├── data					# Reference files of crRNA spacer
+│   ├── SF370_spacer_20nt.fa
+│   ├── SF370_spacer_20nt_with_deletion.fa
+│   └── SF370_spacer_30nt.fa
+├── env						
+│   ├── crRNA-seq.yml				# Conda environment YAML file for crRNA-seq
+│   └── reverse_mapping.yml			# Conda environment YAML file for reverse_mapping
+├── fastq
+│   └── readme.txt				# You can get example fastq file using wget
+├── output_example.tar.gz			# You can check out example results 
+└── scripts
+    ├── Reverse_mapping
+    │   ├── FastQcollapse.py
+    │   ├── Reverse_mapping_with_bowtie.py
+    │   ├── count_RNA.py
+    │   ├── extract_bowtie_unmapped_reads.biopython.py
+    │   └── parse_bowtie_result.py
+    ├── collect_5p_sequence_and_calculate_histogram_for_q30.SF370.sh
+    ├── fastq
+    │   ├── filter_by_sequence_fastq.py
+    │   ├── filter_fastq_by_read_length.py
+    │   └── qscore_masking.py
+    ├── grep_count_by_length_using_regex.py
+    ├── merge_and_lookup_table.manual.py
+    └── merge_and_lookup_table.spacer_regex.py
 ```
 
 ## Requirements
 
 - **Operating System:** Linux/Mac (Bash shell)
-- **Conda & Python:** Python 2.x (reverse_mapping) & 3.x (GWK) with Conda installed
-- **Tools:** cutadapt, bowtie, and other tools as required (should be included in the conda environments)
+- **Conda & Python:** Python 2.7.14 (reverse_mapping) & 3.7.12 (crRNA-seq) with Conda installed
+- **Tools:** cutadapt 4.1, bowtie 1.2.3, and other tools as required (should be included in the conda environments)
 - **Dependencies:** Python libraries and other dependencies are managed within the conda environments.
 
 ## Installation & Setup
@@ -49,7 +59,7 @@ crRNA_pipeline/
    Use the provided YAML files to create the necessary conda environments:
 
    ```bash
-   conda env create -f env/GWK.yml
+   conda env create -f env/crRNA-seq.yml
    conda env create -f env/reverse_mapping.yml
    ```
 
@@ -79,26 +89,17 @@ crRNA_pipeline/
    bash main.sh
    ```
 
+   You can check out the example results in `output_example.tar.gz` 
 
 ## Additional Information
 
 - **Relative Paths:**\
   All scripts use relative paths based on the project root (`crRNA-seq/`). Ensure the folder structure remains unchanged or update paths as necessary.
 
-- **Environment Activation:**\
-  Each script activates its respective conda environment (e.g., using `conda activate GWK`). Make sure that the environments are properly set up before running the pipeline.
-
 - **Dependency Files:**\
   Files such as `qscore_masking.py` and `merge_and_lookup_table.manual.py` must exist in the appropriate locations (e.g., `./scripts/fastq/` or `./scripts/`). Verify and adjust the paths in the scripts if needed.
 
 ## Troubleshooting
-
-- **Conda Activation Issues:**\
-  If the conda environments are not activating properly, run:
-
-  ```bash
-  source ~/anaconda3/etc/profile.d/conda.sh
-  ```
 
 - **File Path Errors:**\
   Ensure that all required files exist in the specified directories. Verify the relative paths in the scripts if you encounter errors.

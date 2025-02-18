@@ -12,14 +12,14 @@ def merge_and_lookup(input_files, output_file):
 
         # Read the data from the current file
         raw_data = pd.read_csv(file, sep='\s+')
-        raw_data = raw_data[raw_data['length'] != 'length'] # 사이에 있는 헤더 제거
-        raw_data['length'] = raw_data['length'].astype(int) # 길이 int 변환
-        data = raw_data[raw_data["length"] >= 5][['pattern', 'match_count']] # pattern 길이가 5 이상
+        raw_data = raw_data[raw_data['length'] != 'length']
+        raw_data['length'] = raw_data['length'].astype(int)
+        data = raw_data[raw_data["length"] >= 5][['pattern', 'match_count']] # >5nt
         name = file.split(".")[0]
 
         data.columns = ["value", name]
 
-        print(data)
+        #print(data)
 
         # Merge the current data with the existing merged data
         if merged_data.empty:
@@ -32,8 +32,8 @@ def merge_and_lookup(input_files, output_file):
     merged_data.to_csv(output_file, index=False, sep="\t")
 
     # Display the merged data
-    print("Merged data:")
-    print(merged_data)
+    #print("Merged data:")
+    #print(merged_data)
 
 if __name__ == "__main__":
     # Parse command-line arguments
