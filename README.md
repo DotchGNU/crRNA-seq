@@ -99,7 +99,7 @@ crRNA_pipeline/
     - CPU: 12-Core Intel Xeon E5 @ 2.7 GHz
     - Memory: 64 GB
 
-When running the `example_input` file under these conditions, the total execution time is **approximately 5 minutes**.  
+When running the `example_input(SF370_1a.R1.fastq.gz)` file under these conditions, the total execution time is **approximately 5 minutes**.  
 
 ## Additional Information
 
