@@ -47,14 +47,14 @@ crRNA_pipeline/
 
 ## Installation & Setup
 
-1. **Clone the Repository and Navigate to the Project Directory**
+1. **Clone the Repository and Navigate to the Project Directory (~1min)**
 
    ```bash
    git clone https://github.com/DotchGNU/crRNA-seq.git
    cd crRNA-seq
    ```
 
-2. **Create Conda Environments**
+2. **Create Conda Environments (~10min)**
 
    Use the provided YAML files to create the necessary conda environments:
 
@@ -90,6 +90,16 @@ crRNA_pipeline/
    ```
 
    You can check out the example results in `output_example.tar.gz` 
+
+**Expected Run Time**
+
+    This project was tested on a Mac Pro with the following specs:
+
+    - OS: macOS High Sierra (Darwin 17.5.0)
+    - CPU: 12-Core Intel Xeon E5 @ 2.7 GHz
+    - Memory: 64 GB
+
+When running the `example_input` file under these conditions, the total execution time is **approximately 5 minutes**.  
 
 ## Additional Information
 
