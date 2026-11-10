@@ -117,6 +117,14 @@ When running the `example_input(SF370_1a.R1.fastq.gz)` file under these conditio
 - **Dependency Problems:**\
   Confirm that all required Python packages are installed within the respective conda environments. Adjust the YAML files if necessary.
 
+## Citation
+
+If you use this pipeline, please cite:
+
+Gu, D.\*, Kim, G.-W. D.\* *et al.* Abasic CRISPR RNAs inherently harness fidelity of SpCas9 for genome editing. *Nature Chemical Biology* (2026). [doi:10.1038/s41589-026-02139-8](https://doi.org/10.1038/s41589-026-02139-8)
+
+\* equal contribution. Archived release: [Zenodo](https://zenodo.org/records/17762942).
+
 ## License & Contact
 
 - **License:**\
